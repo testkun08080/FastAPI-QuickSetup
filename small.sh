@@ -1,27 +1,26 @@
 #!/bin/bash
 
 set -e
-
 echo "Setting up a small FastAPI project..."
 
-# プロジェクト名入力
+# Input for project name
 echo "Enter the project name:"
 read -r PROJECT_NAME
 
-# プロジェクトディレクトリ作成と移動
+# Making the project directory
 mkdir -p "$PROJECT_NAME"
 cd "$PROJECT_NAME" || exit
 
-# 仮想環境のセットアップ
+# Setup environment
 echo "Setting up and activating virtual environment..."
 python3 -m venv venv
 source venv/bin/activate
 pip install --upgrade pip
 
-# FastAPIとUvicornのインストール
+# Installing
 pip install fastapi uvicorn
 
-# ディレクトリとファイルの作成
+# Making the app directory and main.py file
 mkdir -p app
 touch app/__init__.py
 
@@ -35,17 +34,53 @@ def read_root():
     return {"message": "Hello, FastAPI!"}
 EOF
 
-# requirements.txtの作成
+# Making the .env file
+touch .env
+cat << EOF > .env
+#Here you can add environment variables
+# For example:
+# PROJECT_NAME=$PROJECT_NAME
+EOF
+
+
+# Making the .gitignore file
+touch .gitignore
+cat << EOF > .gitignore
+venv
+__pycache__
+*.pyc
+EOF
+
+# Making the README.md file
+touch README.md
+cat << EOF > README.md
+# $PROJECT_NAME
+EOF
+
+# Making the requirements.txt file
 pip freeze > requirements.txt
 
-# 実行スクリプト作成
+# Making the run.sh file
 cat <<EOF > run.sh
 source venv/bin/activate
 uvicorn app.main:app --reload
 EOF
 chmod +x run.sh
 
+# Final message
+echo "Project Directory Structure"
+echo "├── $PROJECT_NAME/     # Project root directory"
+echo "│   └── app/           # Application folder"
+echo "│     └──main.py       # Entry point"
+echo "│   ├── .gitignore     # Git ignore file"
+echo "│   ├── README.md      # Project description"
+echo "│   ├── requirements.txt # Python dependencies"
+echo "│   ├── .env           # Environment variables"   
+echo "│   ├── run.sh         # Script to run FastAPI"
+echo "│   └──venv/           # Virtual environment"
+
 echo "$PROJECT_NAME setup complete!"
+
 echo "To start the server, run one of the following commands:"
 echo "  1. cd $PROJECT_NAME"
 echo "  2. ./run.sh"
