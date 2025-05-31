@@ -16,7 +16,10 @@
 
 - Python 3.12 以上
 - uv pip (インストールは[こちら](https://docs.astral.sh/uv/getting-started/installation/))
-
+  
+Docker上で起動するには:
+- Dcoker (インストールは[こちら](https://github.com/docker/docker-install))
+  
 ---
 
 ## 使い方
