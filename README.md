@@ -1,6 +1,6 @@
 # クイック FastAPI
 
-[日本語](README.md) | English
+日本語 | [English](README_EN.md)
 
 このリポジトリは、FastAPI プロジェクトを素早くセットアップするためのシェルスクリプトを提供しています。
 
