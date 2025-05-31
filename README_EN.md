@@ -14,7 +14,6 @@ Available script:
 Make sure you have the following installed on your system:
 
 - Python 3.12+
-- Bash shell
 - uv pip ([Install page](https://docs.astral.sh/uv/getting-started/installation/))
 
 ---

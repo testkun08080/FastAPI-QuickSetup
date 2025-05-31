@@ -15,7 +15,6 @@
 システムに以下がインストールされていることを確認してください:
 
 - Python 3.12 以上
-- Bash シェル
 - uv pip (インストールは[こちら](https://docs.astral.sh/uv/getting-started/installation/))
 
 ---
