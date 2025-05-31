@@ -6,7 +6,7 @@ This repository provides shell scripts to quickly set up FastAPI projects.
 
 Available script:
 - `quickFastAPI.sh` — Quickly sets up a basic FastAPI project.
-
+- `setup_docker.sh` — Builds a Docker image and starts the container for your FastAPI project.
 ---
 
 ## Prerequisites
