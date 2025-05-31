@@ -1,7 +1,7 @@
 #!/bin/bash
 
 set -e
-echo "Setting up a small FastAPI project..."
+echo "Setting up a FastAPI project..."
 
 # Input for project name
 echo "Enter the project name:"
@@ -18,7 +18,7 @@ source venv/bin/activate
 uv pip install --upgrade pip
 
 # Installing
-uv pip install fastapi uvicorn
+uv pip install fastapi uvicorn 
 
 # Making the app directory and main.py file
 mkdir -p app
@@ -26,12 +26,24 @@ touch app/__init__.py
 
 cat << EOF > app/main.py
 from fastapi import FastAPI
+import os
+
+# Try to load dotenv only in development environments
+if os.environ.get("DEV_MODE") != "true":
+    try:
+        from dotenv import load_dotenv
+        load_dotenv()
+    except ImportError:
+        print("python-dotenv is not installed. Skipping .env loading.")
+
+# Get the PROJECT_NAME variable
+PROJECT_NAME = os.environ.get("PROJECT_NAME", "missing")
 
 app = FastAPI()
 
 @app.get("/")
 def read_root():
-    return {"message": "Hello, FastAPI!"}
+    return {"message": f"Hello, FastAPI! Project name: {PROJECT_NAME}"}
 EOF
 
 # Making the .env file
@@ -39,7 +51,7 @@ touch .env
 cat << EOF > .env
 #Here you can add environment variables
 # For example:
-# PROJECT_NAME=$PROJECT_NAME
+PROJECT_NAME=$PROJECT_NAME
 EOF
 
 
@@ -59,6 +71,9 @@ EOF
 
 # Making the requirements.txt file
 uv pip freeze > requirements.txt
+
+# Install dotenv for local development
+uv pip install python-dotenv
 
 # Making the run.sh file
 cat <<EOF > run.sh
