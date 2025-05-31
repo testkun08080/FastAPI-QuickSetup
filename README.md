@@ -29,6 +29,9 @@ cd FastAPI-QuickSetup
 
 or
 
+> [!NOTE]
+> To download the files, right-click the link and select “Save Link As” or a similar option in your browser.
+
 [Download small.sh](https://raw.githubusercontent.com/testkun08080/FastAPI-QuickSetup/main/small.sh)  
 [Download medium.sh](https://raw.githubusercontent.com/testkun08080/FastAPI-QuickSetup/main/medium.sh)  
 [Download large.sh](https://raw.githubusercontent.com/testkun08080/FastAPI-QuickSetup/main/large.sh)  
