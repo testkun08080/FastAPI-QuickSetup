@@ -40,3 +40,8 @@ or
 ```bash
 ./small.sh    # You can also try the other scripts: ./medium.sh or ./large.sh
 ```
+
+## License
+
+This project is licensed under the MIT License.  
+See the [LICENSE](./LICENSE) file for more details.
