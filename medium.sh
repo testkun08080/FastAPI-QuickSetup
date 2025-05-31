@@ -15,10 +15,10 @@ cd "$PROJECT_NAME" || exit
 echo "Setting up and activating virtual environment..."
 python3 -m venv venv
 source venv/bin/activate
-pip install --upgrade pip
+uv pip install --upgrade pip
 
 # Installing necessary libraries
-pip install fastapi uvicorn pytest
+uv pip install fastapi uvicorn pytest
 
 # Making the app directory structure
 mkdir -p app/routers app/utils app/tests
@@ -66,7 +66,7 @@ touch .env .gitignore README.md
 echo "venv" > .gitignore
 echo "__pycache__" >> .gitignore
 echo "*.pyc" >> .gitignore
-pip freeze > requirements.txt
+uv pip freeze > requirements.txt
 
 # Run script
 cat << EOF > run.sh

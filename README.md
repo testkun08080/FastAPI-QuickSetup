@@ -14,7 +14,7 @@ Make sure you have the following installed on your system:
 
 - Python 3.8+
 - Bash shell
-- `pip` (Python package installer)
+- uv pip (Universal Python package installer)
 
 ---
 

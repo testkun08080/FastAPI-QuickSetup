@@ -14,10 +14,10 @@ cd "$PROJECT_NAME" || exit
 echo "Creating virtual environment..."
 python3 -m venv venv
 source venv/bin/activate
-pip install --upgrade pip
+uv pip install --upgrade pip
 
 # Install main packages
-pip install fastapi uvicorn sqlalchemy alembic pytest
+uv pip install fastapi uvicorn sqlalchemy alembic pytest
 
 # Create directories
 mkdir -p app/routers app/services app/models app/utils tests scripts docs
@@ -103,7 +103,7 @@ cat << EOF > README.md
 Large scale FastAPI project.
 EOF
 
-pip freeze > requirements.txt
+uv pip freeze > requirements.txt
 
 cat << EOF > run.sh
 source venv/bin/activate

@@ -15,10 +15,10 @@ cd "$PROJECT_NAME" || exit
 echo "Setting up and activating virtual environment..."
 python3 -m venv venv
 source venv/bin/activate
-pip install --upgrade pip
+uv pip install --upgrade pip
 
 # Installing
-pip install fastapi uvicorn
+uv pip install fastapi uvicorn
 
 # Making the app directory and main.py file
 mkdir -p app
@@ -58,7 +58,7 @@ cat << EOF > README.md
 EOF
 
 # Making the requirements.txt file
-pip freeze > requirements.txt
+uv pip freeze > requirements.txt
 
 # Making the run.sh file
 cat <<EOF > run.sh
