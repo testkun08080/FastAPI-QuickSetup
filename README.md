@@ -29,12 +29,13 @@ git clone https://github.com/testkun08080/FastAPI-QuickSetup.git
 cd FastAPI-QuickSetup
 ```
 
-Or download the script directly:
+Or download the scripts directly:
 
 > [!NOTE]
 > To download the files, right-click the link and select “Save Link As” or a similar option in your browser.
 
-[Download quickFastAPI.sh](https://raw.githubusercontent.com/testkun08080/FastAPI-QuickSetup/main/quickFastAPI.sh)  
+[Download quickFastAPI.sh](https://raw.githubusercontent.com/testkun08080/FastAPI-QuickSetup/main/quickFastAPI.sh) 
+[Download setup_docker.sh](https://raw.githubusercontent.com/testkun08080/FastAPI-QuickSetup/main/setup_docker.sh)  
 
 <!-- [Download small.sh](https://raw.githubusercontent.com/testkun08080/FastAPI-QuickSetup/main/small.sh)  
 [Download medium.sh](https://raw.githubusercontent.com/testkun08080/FastAPI-QuickSetup/main/medium.sh)  
@@ -59,6 +60,9 @@ Or download the script directly:
     cd <PROJECT_NAME>
     ./run.sh
     ```
+5. Once the application is running locally, open the following URL in your browser to access it:
+   http://localhost:8000
+
 
 ### 3. Build and run the application with Docker
 1. Make the Docker setup script executable and run it:
