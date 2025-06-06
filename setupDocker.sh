@@ -53,7 +53,7 @@ WORKDIR /app
 
 # Install dependencies
 COPY requirements.txt .
-RUN uv pip install --no-cache-dir -r requirements.txt
+RUN uv pip install -r requirements.txt --system
 
 # Copy application code
 COPY . .
