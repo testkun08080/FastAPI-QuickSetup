@@ -78,6 +78,7 @@ cd FastAPI-QuickSetup
     Docker setup complete!
     Your FastAPI application is now running at: http://localhost:8000
     ```
+    http://localhost:8000
 ---
 ## ライセンス
 
