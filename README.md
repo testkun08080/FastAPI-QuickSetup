@@ -7,7 +7,7 @@
 
 スクリプト:
 - `quickFastAPI.sh` — 基本的な FastAPI プロジェクトをチャチャっとセットアップします。
-- `setup_docker.sh` — Docker 用のイメージ作成から、起動までを行います。
+- `setupDocker.sh` — Docker 用のイメージ作成から、起動までを行います。
 
 ---
 
