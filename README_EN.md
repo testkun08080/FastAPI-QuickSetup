@@ -13,7 +13,7 @@ Available script:
 
 Make sure you have the following installed on your system:
 
-- Python 3.12+
+- Python 3.12
 - uv pip ([Install page](https://docs.astral.sh/uv/getting-started/installation/))
 
 If you want to run the app on Docker:

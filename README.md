@@ -15,7 +15,7 @@
 
 システムに以下がインストールされていることを確認してください:
 
-- Python 3.12 以上
+- Python 3.12
 - uv pip (インストールは[こちら](https://docs.astral.sh/uv/getting-started/installation/))
   
 Docker上で起動するには:
