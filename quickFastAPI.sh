@@ -13,8 +13,8 @@ cd "$PROJECT_NAME" || exit
 
 # Setup environment
 echo "Setting up and activating virtual environment..."
-python3 -m venv venv
-source venv/bin/activate
+uv venv --python 3.12
+source .venv/bin/activate
 uv pip install --upgrade pip
 
 # Installing
@@ -58,7 +58,7 @@ EOF
 # Making the .gitignore file
 touch .gitignore
 cat << EOF > .gitignore
-venv
+.venv
 __pycache__
 *.pyc
 EOF
@@ -77,7 +77,7 @@ uv pip install python-dotenv
 
 # Making the run.sh file
 cat <<EOF > run.sh
-source venv/bin/activate
+source .venv/bin/activate
 uvicorn app.main:app --reload
 EOF
 chmod +x run.sh
@@ -92,7 +92,7 @@ echo "│   ├── README.md      # Project description"
 echo "│   ├── requirements.txt # Python dependencies"
 echo "│   ├── .env           # Environment variables"   
 echo "│   ├── run.sh         # Script to run FastAPI"
-echo "│   └──venv/           # Virtual environment"
+echo "│   └──.venv/           # Virtual environment"
 
 echo "$PROJECT_NAME setup complete!"
 

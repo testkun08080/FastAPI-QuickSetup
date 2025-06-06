@@ -24,6 +24,9 @@ fi
 # Navigate to the selected project folder
 cd "$ROOT_FOLDER" || exit
 
+# Get lowercase project name
+L_ROOTFOLDER=$(echo "$ROOT_FOLDER" | tr '[:upper:]' '[:lower:]')
+
 # Generate .dockerignore
 cat << EOF > .dockerignore
 __pycache__
@@ -43,14 +46,14 @@ EOF
 # Generate Dockerfile
 cat << EOF > Dockerfile
 # Base image
-FROM python:3.12-slim
+RUN uv pip install --no-cache-dir -r requirements.txt
 
 # Set working directory
 WORKDIR /app
 
 # Install dependencies
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+RUN uv pip install --no-cache-dir -r requirements.txt
 
 # Copy application code
 COPY . .
@@ -68,8 +71,8 @@ cat << EOF > docker-compose.yml
 version: "3.8"
 
 services:
-  $ROOT_FOLDER:
-    image: $ROOT_FOLDER-app:1.0.0
+  $L_ROOTFOLDER:
+    image: $L_ROOTFOLDER-app:1.0.0
     build:
       context: .
       dockerfile: Dockerfile
@@ -79,8 +82,9 @@ services:
       - DEV_MODE=true
     env_file:
       - .env
-    container_name: $ROOT_FOLDER
+    container_name: $L_ROOTFOLDER
 EOF
+
 
 # Build Docker image
 echo "Building Docker image..."
