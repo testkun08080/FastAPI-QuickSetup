@@ -46,7 +46,7 @@ EOF
 # Generate Dockerfile
 cat << EOF > Dockerfile
 # Base image
-RUN uv pip install --no-cache-dir -r requirements.txt
+FROM ghcr.io/astral-sh/uv:python3.12-bookworm-slim
 
 # Set working directory
 WORKDIR /app
