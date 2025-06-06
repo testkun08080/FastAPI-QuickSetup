@@ -3,6 +3,7 @@
 日本語 | [English](README_EN.md)
 
 このリポジトリは、FastAPI プロジェクトを素早くセットアップするためのシェルスクリプトを提供しています。
+とにかくちゃちゃっと試したい人は是非。
 
 スクリプト:
 - `quickFastAPI.sh` — 基本的な FastAPI プロジェクトをチャチャっとセットアップします。
@@ -37,7 +38,7 @@ cd FastAPI-QuickSetup
 > ファイルをダウンロードするには、リンクを右クリックして「名前を付けてリンク先を保存」などのオプションを選択してください。
 
 [quickFastAPI.sh をダウンロード](https://raw.githubusercontent.com/testkun08080/FastAPI-QuickSetup/main/quickFastAPI.sh)  
-[setup_docker.sh をダウンロード](https://raw.githubusercontent.com/testkun08080/FastAPI-QuickSetup/main/setup_docker.sh)  
+[setupDocker.sh をダウンロード](https://raw.githubusercontent.com/testkun08080/FastAPI-QuickSetup/main/setupDocker.sh)  
 
 ### 2. シェルスクリプトを実行
 1. スクリプトを実行して、ローカル環境に FastAPI プロジェクトをセットアップします:
@@ -64,8 +65,8 @@ cd FastAPI-QuickSetup
 ### 3. Docker でアプリケーションをビルド・実行
 1. Docker セットアップスクリプトに実行権限を付与し、実行:
     ```bash
-    chmod +x setup_docker.sh
-    ./setup_docker.sh
+    chmod +x setupDocker.sh
+    ./setupDocker.sh
     ```
 2. プロンプトが表示されたら、Docker ビルドに使用するディレクトリを番号で選択:
     ```bash

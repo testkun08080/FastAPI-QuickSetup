@@ -36,7 +36,7 @@ Or download the scripts directly:
 > To download the files, right-click the link and select “Save Link As” or a similar option in your browser.
 
 [Download quickFastAPI.sh](https://raw.githubusercontent.com/testkun08080/FastAPI-QuickSetup/main/quickFastAPI.sh) 
-[Download setup_docker.sh](https://raw.githubusercontent.com/testkun08080/FastAPI-QuickSetup/main/setup_docker.sh)  
+[Download setupDocker.sh](https://raw.githubusercontent.com/testkun08080/FastAPI-QuickSetup/main/setupDocker.sh)  
 
 ### 2. Run the shell script
 1. Execute the script to set up a FastAPI project in your local environment:
@@ -64,8 +64,8 @@ Or download the scripts directly:
 ### 3. Build and run the application with Docker
 1. Make the Docker setup script executable and run it:
     ```bash
-    chmod +x setup_docker.sh
-    ./setup_docker.sh
+    chmod +x setupDocker.sh
+    ./setupDocker.sh
     ```
 2. When prompted, select the directory you want to use for the Docker build by entering the corresponding number:
     ```bash
